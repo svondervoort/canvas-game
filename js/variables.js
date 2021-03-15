@@ -8,7 +8,3 @@ const grid = {
         set: []
     },
 };
-const playingField = {};
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
