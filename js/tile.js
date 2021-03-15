@@ -11,8 +11,8 @@ const tileColors = [
 function Tile(x, y) {
     this.x = x;
     this.y = y;
-    this.width = grid.size;
-    this.height = grid.size;
+    this.width = grid.tile.size;
+    this.height = grid.tile.size;
     this.color = tileColors[Math.floor(Math.random() * tileColors.length)];
 
     this.draw = function() {

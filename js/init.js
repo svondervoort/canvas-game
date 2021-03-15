@@ -1,7 +1,7 @@
 console.info('Init ➡️ init.js');
 
 // Put new player at the center of the canvas
-const player = new Player((canvas.width / 2) - (grid.size / 2), (canvas.height / 2) - (grid.size / 2), grid.size, grid.size);
+const player = new Player((canvas.width / 2) - (grid.tile.size / 2 - grid.unit.offset), (canvas.height / 2) - (grid.tile.size / 2 - grid.unit.offset), grid.unit.size, grid.unit.size);
 
 function animate() {
     requestAnimationFrame(animate);
