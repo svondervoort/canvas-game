@@ -1,5 +1,5 @@
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+// canvas.width = window.innerWidth;
+// canvas.height = window.innerHeight;
 
 function resizeCanvas() {
     const width = grid.tile.x * grid.tile.size;

@@ -2,13 +2,13 @@ console.info('Init 🔲 grid.js');
 
 function generateGrid() {
     // Calculate X grid
-    grid.tile.x = Math.floor(canvas.width / grid.tile.size);
+    grid.tile.x = Math.floor(window.innerWidth / grid.tile.size);
     if(isEven(grid.tile.x)) {
         grid.tile.x -= 1;
     }
 
     // Calculate Y grid
-    grid.tile.y = Math.floor(canvas.height / grid.tile.size);
+    grid.tile.y = Math.floor(window.innerHeight / grid.tile.size);
     if(isEven(grid.tile.y)) {
         grid.tile.y -= 1;
     }
