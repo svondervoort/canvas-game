@@ -12,8 +12,36 @@ function Player(x, y, width, height, orientation = null) {
         c.fillRect(this.x, this.y, this.width, this.height);
     }
 
-    this.update = function() {
+    this.update = function(input = null) {
         // Do things
+        if (input != null && input instanceof KeyboardEvent) {
+            switch (input.keyCode) {
+                case 37:
+                    // Left
+                    if (player.x != grid.unit.offset) {
+                        player.x -= grid.tile.size;
+                    }
+                    break;
+                case 38:
+                    // Up
+                    if (player.y != grid.unit.offset) {
+                        player.y -= grid.tile.size;
+                    }
+                    break;
+                case 39:
+                    // Right
+                    if (player.x != (grid.tile.size * (grid.tile.x - 1)) + grid.unit.offset) {
+                        player.x += grid.tile.size;
+                    }
+                    break;
+                case 40:
+                    // Down
+                    if (player.y != (grid.tile.size * (grid.tile.y - 1)) + grid.unit.offset) {
+                        player.y += grid.tile.size;
+                    }
+                    break;
+            }
+        }
         this.draw(); // then draw again
     }
 }
