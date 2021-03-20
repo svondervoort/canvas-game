@@ -1,5 +1,16 @@
 console.info('Init 👤 player.js');
 
+/**************************************************************************************************
+ * Player.js
+ * 
+ * No description yet
+ * 
+ * To-Do:
+ * - Add health
+ * - Block player movement when moving towards an enemy
+ * - Add attack event
+ *************************************************************************************************/
+
 function Player(x, y, width, height, orientation = null) {
     this.x = x;
     this.y = y;

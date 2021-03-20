@@ -1,5 +1,14 @@
 console.info('Init 🔲 grid.js');
 
+/**************************************************************************************************
+ * Grid.js
+ * 
+ * Generates a random tile grid that fits the current window size and draws that grid.
+ * 
+ * To-Do:
+ * - 
+ *************************************************************************************************/
+
 function generateGrid() {
     // Calculate X grid
     grid.tile.x = Math.floor(window.innerWidth / grid.tile.size);

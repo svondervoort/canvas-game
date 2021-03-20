@@ -1,5 +1,14 @@
 console.info('Init 🗺️ tile.js');
 
+/**************************************************************************************************
+ * Tile.js
+ * 
+ * Contains the Tile object function that generates a tile and updates it accordingly.
+ * 
+ * To-Do:
+ * - Add various tile types
+ *************************************************************************************************/
+
 const tileColors = [
     '#ccd5ae',
     '#e9edc9',

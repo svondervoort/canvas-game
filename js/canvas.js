@@ -1,5 +1,13 @@
-// canvas.width = window.innerWidth;
-// canvas.height = window.innerHeight;
+console.info('Init 📋 canvas.js');
+
+/**************************************************************************************************
+ * Canvas.js
+ * 
+ * Resizes canvas to fit a grid within the available window size.
+ * 
+ * To-Do:
+ * - 
+ *************************************************************************************************/
 
 function resizeCanvas() {
     const width = grid.tile.x * grid.tile.size;

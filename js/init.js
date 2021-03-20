@@ -1,4 +1,13 @@
-console.info('Init ➡️ init.js');
+console.info('Init ➡️ 🛫 init.js');
+
+/**************************************************************************************************
+ * Canvas.js
+ * 
+ * Initiates the game and updates the canvas.
+ * 
+ * To-Do:
+ * - 
+ *************************************************************************************************/
 
 function animate() {
     // Check for animationFrame
