@@ -23,6 +23,6 @@ function animate() {
 generateGrid();
 
 // Put new player at the center of the canvas
-const player = new Player((canvas.width / 2) - (grid.tile.size / 2 - grid.unit.offset), (canvas.height / 2) - (grid.tile.size / 2 - grid.unit.offset), grid.unit.size, grid.unit.size);
+const player = new Player((canvas.width / 2) - (grid.tile.size / 2 - grid.unit.offset), (canvas.height / 2) - (grid.tile.size / 2 - grid.unit.offset));
 
 animate();

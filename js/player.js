@@ -3,15 +3,16 @@ console.info('Init 👤 player.js');
 /**************************************************************************************************
  * Player.js
  * 
- * No description yet
+ * Containers the Player object function that generates the player and updates it accordingly.
  * 
  * To-Do:
- * - Add health
+ * - Add orentation logic
+ * - Add health logic
+ * - Add attack logic
  * - Block player movement when moving towards an enemy
- * - Add attack event
  *************************************************************************************************/
 
-function Player(x, y, width, height, orientation = null) {
+function Player(x, y) {
     this.x = x;
     this.y = y;
     this.width = width;
@@ -20,7 +21,7 @@ function Player(x, y, width, height, orientation = null) {
 
     this.draw = function() {
         c.fillStyle = 'green';
-        c.fillRect(this.x, this.y, this.width, this.height);
+        c.fillRect(this.x, this.y, grid.unit.size, grid.unit.size);
     }
 
     this.update = function(input = null) {

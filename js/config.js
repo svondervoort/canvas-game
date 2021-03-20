@@ -9,11 +9,15 @@ console.info('Init ⚙️ config.js');
  * - Make the config settings adjustable inside the game
  *************************************************************************************************/
 
-const unitGridRation = 0.5;
+// Set unit to tile ratio
+const unitTileRation = 0.5;
 
 // Create grid tile object
 grid.tile.size = 64;
 
 // Create grid unit object
-grid.unit.size = grid.tile.size * unitGridRation;
+grid.unit.size = grid.tile.size * unitTileRation;
 grid.unit.offset = (grid.tile.size - grid.unit.size) / 2;
+
+// Set max allowed enemies on the screen
+enemies.max = 5;

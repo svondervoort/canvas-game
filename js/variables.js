@@ -17,3 +17,7 @@ const grid = {
         set: []
     },
 };
+const enemies = {
+    max: null,
+    set: []
+}
