@@ -12,12 +12,11 @@ console.info('Init 👤 player.js');
  * - Block player movement when moving towards an enemy
  *************************************************************************************************/
 
-function Player(x, y) {
+function Player(x, y, hp = 3) {
     this.x = x;
     this.y = y;
-    this.width = width;
-    this.height = height;
-    this.orentation = this.orentation;
+    this.hp = hp;
+    this.orentation = null;
 
     this.draw = function() {
         c.fillStyle = 'green';
@@ -56,4 +55,22 @@ function Player(x, y) {
         }
         this.draw(); // then draw again
     }
+}
+
+/**************************************************************************************************
+ * Generate the the player and put him at the center of the canvas
+ *************************************************************************************************/
+
+function generatePlayer () {
+    x = (canvas.width / 2) - (grid.tile.size / 2 - grid.unit.offset);
+    y = (canvas.height / 2) - (grid.tile.size / 2 - grid.unit.offset);
+    player = new Player(x, y);
+}
+
+/**************************************************************************************************
+ * Update the player
+ *************************************************************************************************/
+
+function updatePlayer () {
+    player.update();
 }

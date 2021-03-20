@@ -15,4 +15,7 @@ function resizeCanvas() {
 
     canvas.width = width;
     canvas.height = height;
+
+    generatePlayer();
+    generateEnemies();
 }
