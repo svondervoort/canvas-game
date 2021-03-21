@@ -1,5 +1,3 @@
-console.info('Init 🗺️ tile.js');
-
 /**************************************************************************************************
  * Tile.js
  * 
@@ -7,6 +5,12 @@ console.info('Init 🗺️ tile.js');
  * 
  * To-Do:
  * - Add various tile types
+ *************************************************************************************************/
+
+console.info('Init 🗺️ tile.js');
+
+/**************************************************************************************************
+ * Temporary tile colors
  *************************************************************************************************/
 
 const tileColors = [
@@ -17,6 +21,10 @@ const tileColors = [
     '#d4a373',
 ]
 
+/**************************************************************************************************
+ * Create a new tile object
+ *************************************************************************************************/
+
 function Tile(x, y) {
     this.x = x;
     this.y = y;
@@ -24,12 +32,12 @@ function Tile(x, y) {
     this.height = grid.tile.size;
     this.color = tileColors[Math.floor(Math.random() * tileColors.length)];
 
-    this.draw = function() {
+    this.draw = function () {
         c.fillStyle = this.color;
         c.fillRect(this.x, this.y, this.width, this.height);
     }
 
-    this.update = function() {
+    this.update = function () {
         // Do things
         this.draw(); // then draw again
     }

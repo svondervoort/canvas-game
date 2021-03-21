@@ -1,15 +1,19 @@
-console.info('Init 👤 player.js');
-
 /**************************************************************************************************
  * Player.js
  * 
- * Containers the Player object function that generates the player and updates it accordingly.
+ * Contains the Player object function that generates the player and updates it accordingly.
  * 
  * To-Do:
  * - Add orentation logic
  * - Add health logic
  * - Add attack logic
  * - Block player movement when moving towards an enemy
+ *************************************************************************************************/
+
+console.info('Init 👤 player.js');
+
+/**************************************************************************************************
+ * Create new Player object
  *************************************************************************************************/
 
 function Player(x, y, hp = 3) {

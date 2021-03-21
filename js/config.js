@@ -1,5 +1,3 @@
-console.info('Init ⚙️ config.js');
-
 /**************************************************************************************************
  * Config.js
  * 
@@ -8,6 +6,8 @@ console.info('Init ⚙️ config.js');
  * To-Do:
  * - Make the config settings adjustable inside the game
  *************************************************************************************************/
+
+console.info('Init ⚙️ config.js');
 
 // Set unit to tile ratio
 const unitTileRation = 0.5;

@@ -1,5 +1,3 @@
-console.info('Init 🕹️ controls.js');
-
 /**************************************************************************************************
  * Controls.js
  * 
@@ -10,6 +8,12 @@ console.info('Init 🕹️ controls.js');
  * - Add swipe event
  *************************************************************************************************/
 
-window.addEventListener('keydown', function(e){
+console.info('Init 🕹️ controls.js');
+
+/**************************************************************************************************
+ * On keydown update the player object and send event to player.update
+ *************************************************************************************************/
+
+window.addEventListener('keydown', function (e) {
     player.update(e);
 });
