@@ -18,38 +18,46 @@ function Player(x, y, hp = 3) {
     this.hp = hp;
     this.orentation = null;
 
-    this.draw = function() {
+    this.draw = function () {
         c.fillStyle = 'green';
         c.fillRect(this.x, this.y, grid.unit.size, grid.unit.size);
     }
 
-    this.update = function(input = null) {
+    this.update = function (input = null) {
         // Do things
-        if (input != null && input instanceof KeyboardEvent) {
+        if (input != null && input instanceof KeyboardEvent && playerMove == true) {
             switch (input.keyCode) {
                 case 37:
                     // Left
                     if (player.x != grid.unit.offset) {
                         player.x -= grid.tile.size;
                     }
+                    playerMove = false;
+                    enemiesMove = true;
                     break;
                 case 38:
                     // Up
                     if (player.y != grid.unit.offset) {
                         player.y -= grid.tile.size;
                     }
+                    playerMove = false;
+                    enemiesMove = true;
                     break;
                 case 39:
                     // Right
                     if (player.x != (grid.tile.size * (grid.tile.x - 1)) + grid.unit.offset) {
                         player.x += grid.tile.size;
                     }
+                    playerMove = false;
+                    enemiesMove = true;
                     break;
                 case 40:
                     // Down
                     if (player.y != (grid.tile.size * (grid.tile.y - 1)) + grid.unit.offset) {
                         player.y += grid.tile.size;
                     }
+                    playerMove = false;
+                    enemiesMove = true;
                     break;
             }
         }
@@ -61,7 +69,7 @@ function Player(x, y, hp = 3) {
  * Generate the the player and put him at the center of the canvas
  *************************************************************************************************/
 
-function generatePlayer () {
+function generatePlayer() {
     x = (canvas.width / 2) - (grid.tile.size / 2 - grid.unit.offset);
     y = (canvas.height / 2) - (grid.tile.size / 2 - grid.unit.offset);
     player = new Player(x, y);
@@ -71,6 +79,6 @@ function generatePlayer () {
  * Update the player
  *************************************************************************************************/
 
-function updatePlayer () {
+function updatePlayer() {
     player.update();
 }
