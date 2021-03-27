@@ -21,5 +21,5 @@ function resizeCanvas() {
     canvas.height = height;
 
     generatePlayer();
-    generateEnemies();
+    generateEnemy(enemies.max);
 }

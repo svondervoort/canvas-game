@@ -42,30 +42,24 @@ function getEnemySpawnLocation() {
     output.x = (Math.floor(Math.random() * grid.tile.x)) * grid.tile.size + grid.unit.offset;
     output.y = (Math.floor(Math.random() * grid.tile.y)) * grid.tile.size + grid.unit.offset;
 
-    // To-Do: check if the position is empty
     return output;
 }
 
 /**************************************************************************************************
- * Generate the first set of enemies and place them on random locations
+ * Generate an X amount of enemies
  *************************************************************************************************/
 
-function generateEnemies() {
-    for (let i = 0; i < enemies.max; i++) {
+function generateEnemy(amount) {
+    for (let i = 0; i < amount; i++) {
         x = getEnemySpawnLocation().x;
         y = getEnemySpawnLocation().y;
+
+        while (isOccupiedByPlayer(x, y) || isOccupiedByEnemy(x, y)) {
+            x = getEnemySpawnLocation().x;
+            y = getEnemySpawnLocation().y;
+        }
         enemies.set.push(new Enemy(x, y));
     }
-}
-
-/**************************************************************************************************
- * If an enemy dies add a new one
- *************************************************************************************************/
-
-function generateEnemy() {
-    x = getEnemySpawnLocation().x;
-    y = getEnemySpawnLocation().y;
-    enemies.set.push(new Enemy(x, y));
 }
 
 /**************************************************************************************************

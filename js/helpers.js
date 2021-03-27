@@ -9,9 +9,33 @@ console.info("Init ℹ️ helpers.js");
 /**************************************************************************************************
  * Check if the input is an odd number
  *************************************************************************************************/
-const isOdd = function (x) { return x & 1; };
+const isOdd = function (input) { return input & 1; };
 
 /**************************************************************************************************
  * Check if the input is an even number
  *************************************************************************************************/
-const isEven = function (x) { return !(x & 1); };
+const isEven = function (input) { return !(input & 1); };
+
+/**************************************************************************************************
+ * Check if position is occupied by player
+ *************************************************************************************************/
+const isOccupiedByPlayer = function (x, y) {
+    if (x == player.x && y == player.y) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+/**************************************************************************************************
+ * Check if position is occupied by enemy
+ *************************************************************************************************/
+const isOccupiedByEnemy = function (x, y) {
+    for (let i = 0; i < enemies.set; i++) {
+        if (x == enemies.set[i].x && y == enemies.set[i].y) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+};

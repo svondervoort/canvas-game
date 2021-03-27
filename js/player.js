@@ -16,10 +16,11 @@ console.info('Init 👤 player.js');
  * Create new Player object
  *************************************************************************************************/
 
-function Player(x, y, hp = 3) {
+function Player(x, y) {
     this.x = x;
     this.y = y;
-    this.hp = hp;
+    this.health = 5;
+    this.power = 1;
     this.orentation = null;
 
     this.draw = function () {
