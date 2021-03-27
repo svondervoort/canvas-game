@@ -1,8 +1,6 @@
-# canvas-game
-
-## Created by
-Sander van de Vondervoort
-info@well-made.nl
+# canvas-game 
+Status: Work in progress  
+[Play now](https://well-made-canvas-game.netlify.app/)
 
 ## Controls
 Use the arrow keys to move around
