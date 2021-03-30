@@ -1,8 +1,8 @@
 // Set world variables
 const gridSize = 64;
-const worldWidth = 20 * gridSize;
+const worldWidth = 21 * gridSize;
 const worldHeight = 15 * gridSize;
-const offsetStep = 16;
+const offsetStep = gridSize;
 
 // Create world object
 function World() {

@@ -6,7 +6,7 @@ Status: Work in progress
 Use the arrow keys to move around
 
 ## Prototypes
-[World test](https://well-made-canvas-game.netlify.app/prototypes/world-test/)
+[World test](https://well-made-canvas-game.netlify.app/_prototypes/world-test/)
 > In this prototype the world instead of the player moves.
 
 ## Inspired by
