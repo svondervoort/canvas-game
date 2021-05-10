@@ -1,9 +1,9 @@
 // Create world object
 function World() {
-    this.x = 0;
-    this.y = 0;
     this.offsetX = 0;
     this.offsetY = 0;
+    this.x = (windowWidth / 2) - (worldWidth / 2) - this.offsetX;
+    this.y = (windowHeight / 2) - (worldHeight / 2) - this.offsetY;
 
     this.draw = function () {
         // Calculate X & Y

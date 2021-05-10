@@ -11,7 +11,7 @@ function Enemy(x, y) {
         }
 
         c.fillStyle = 'red';
-        c.fillRect(this.x - world.offsetX, this.y - world.offsetY, gridSize, gridSize);
+        c.fillRect(this.x, this.y, gridSize, gridSize);
     }
 }
 

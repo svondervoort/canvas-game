@@ -5,11 +5,17 @@ window.addEventListener('keydown', function (e) {
             if (world.x != player.x) {
                 world.offsetX -= stepSize;
             }
+            for (let i = 0; i < enemies.length; i++) {
+                enemies[i].x += stepSize;
+            }
             break;
         case 38:
             // Up
             if (world.y != player.y) {
                 world.offsetY -= stepSize;
+            }
+            for (let i = 0; i < enemies.length; i++) {
+                enemies[i].y += stepSize;
             }
             break;
         case 39:
@@ -17,11 +23,17 @@ window.addEventListener('keydown', function (e) {
             if (world.x != (player.x + gridSize) - worldWidth) {
                 world.offsetX += stepSize;
             }
+            for (let i = 0; i < enemies.length; i++) {
+                enemies[i].x -= stepSize;
+            }
             break;
         case 40:
             // Down
             if (world.y != (player.y + gridSize) - worldHeight) {
                 world.offsetY += stepSize;
+            }
+            for (let i = 0; i < enemies.length; i++) {
+                enemies[i].y -= stepSize;
             }
             break;
     }
