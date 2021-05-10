@@ -1,87 +1,54 @@
-/**************************************************************************************************
- * Enemy.js
- * 
- * Containers the Enemy object function that generates enemies and updates it accordingly.
- * 
- * To-Do:
- * - Add various enemy types
- *************************************************************************************************/
-
-console.info('Init 😈 enemy.js');
-
-/**************************************************************************************************
- * Create new Enemy object
- *************************************************************************************************/
-
-function Enemy(x, y, hp = 1) {
+function Enemy(x, y) {
     this.x = x;
     this.y = y;
-    this.hp = hp;
-    this.orentation = null;
-    this.moved = false;
+    this.hasMoved = false;
 
     this.draw = function () {
+        if (enemiesTurn == true && this.hasMoved == false) {
+            getDirectionToPlayer(this);
+            console.log('updating enemy');
+            this.hasMoved = true;
+        }
+
         c.fillStyle = 'red';
-        c.fillRect(this.x, this.y, grid.unit.size, grid.unit.size);
+        c.fillRect(this.x - world.offsetX, this.y - world.offsetY, gridSize, gridSize);
     }
+}
 
-    this.update = function (input = null) {
-        if (enemiesMove == true && this.moved == false) {
-            this.moved = true;
+function getDirectionToPlayer(enemy) {
+    const differenceX = enemy.x - player.x;
+    const distanceX = differenceX < 0 ? -differenceX : differenceX;
+    const differenceY = enemy.y - player.y;
+    const distanceY = differenceY < 0 ? -differenceY : differenceY;
+
+    if (distanceX > distanceY) {
+        if (differenceX > 0) {
+            enemy.x -= stepSize;
+        } else {
+            enemy.x += stepSize;
         }
-        this.draw(); // then draw again
-    }
-}
-
-/**************************************************************************************************
- * Generate the first set of enemies and place them on random locations
- *************************************************************************************************/
-
-function getEnemySpawnLocation() {
-    let output = { x: null, y: null }
-    output.x = (Math.floor(Math.random() * grid.tile.x)) * grid.tile.size + grid.unit.offset;
-    output.y = (Math.floor(Math.random() * grid.tile.y)) * grid.tile.size + grid.unit.offset;
-
-    return output;
-}
-
-/**************************************************************************************************
- * Generate an X amount of enemies
- *************************************************************************************************/
-
-function generateEnemy(amount) {
-    for (let i = 0; i < amount; i++) {
-        x = getEnemySpawnLocation().x;
-        y = getEnemySpawnLocation().y;
-
-        while (isOccupiedByPlayer(x, y) || isOccupiedByEnemy(x, y)) {
-            x = getEnemySpawnLocation().x;
-            y = getEnemySpawnLocation().y;
+    } else {
+        if (differenceY > 0) {
+            enemy.y -= stepSize;
+        } else {
+            enemy.y += stepSize;
         }
-        enemies.set.push(new Enemy(x, y));
     }
 }
-
-/**************************************************************************************************
- * Update all enemies
- *************************************************************************************************/
 
 function updateEnemies() {
-    let unmovedEnemies = 0;
-    // Check if all enemies have moved
-    for (let i = 0; i < enemies.set.length; i++) {
-        enemies.set[i].update();
-
-        if (enemies.set[i].moved == false) {
-            unmovedEnemies += 1;
+    if (enemiesTurn) {
+        console.log('updating enemies');
+        for (let i = 0; i < enemies.length; i++) {
+            enemies[i].draw();
+            enemies[i].hasMoved = false;
         }
-    }
-    // If all enemies have moved reset move variables
-    if (unmovedEnemies == 0) {
-        playerMove = true;
-        enemiesMove = false;
-        for (let i = 0; i < enemies.set.length; i++) {
-            enemies.set[i].moved = false;
+
+        playersTurn = true;
+        enemiesTurn = false;
+    } else {
+        for (let i = 0; i < enemies.length; i++) {
+            enemies[i].draw();
         }
     }
 }

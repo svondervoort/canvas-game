@@ -1,35 +1,12 @@
-/**************************************************************************************************
- * Canvas.js
- * 
- * Initiates the game and updates the canvas.
- * 
- * To-Do:
- * - 
- *************************************************************************************************/
-
-console.info('Init ➡️ 🛫 init.js');
-
-/**************************************************************************************************
- * The animate function to redraw everything
- *************************************************************************************************/
-
-function animate() {
-    // Check for animationFrame
-    requestAnimationFrame(animate);
-    // Clear the canvas
-    c.clearRect(0, 0, canvas.width, canvas.height);
-    // (re)Draw the grid
-    drawGrid();
-    // Update player
-    updatePlayer();
-    // Update enemies
-    updateEnemies();
+// Create world
+const world = new World();
+// Create player
+const player = new Player();
+// Create enemies
+const enemies = [];
+for (let i = 0; i < 5; i++) {
+    const x = (Math.floor(Math.random() * gridSizeX) * gridSize);
+    const y = (Math.floor(Math.random() * gridSizeY) * gridSize);
+    const enemy = new Enemy(x, y);
+    enemies.push(enemy);
 }
-
-/**************************************************************************************************
- * Start the basic functions to get the game going
- *************************************************************************************************/
-
-generateGrid();
-
-animate();
