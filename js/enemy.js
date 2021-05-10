@@ -6,7 +6,6 @@ function Enemy(x, y) {
     this.draw = function () {
         if (enemiesTurn == true && this.hasMoved == false) {
             getDirectionToPlayer(this);
-            console.log('updating enemy');
             this.hasMoved = true;
         }
 
@@ -38,7 +37,6 @@ function getDirectionToPlayer(enemy) {
 
 function updateEnemies() {
     if (enemiesTurn) {
-        console.log('updating enemies');
         for (let i = 0; i < enemies.length; i++) {
             enemies[i].draw();
             enemies[i].hasMoved = false;
